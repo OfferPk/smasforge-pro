@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060911" />
+      <stop offset="100%" stop-color="#0e1726" />
+    </linearGradient>
+    <linearGradient id="boxGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="boxGradCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#083344" />
+      <stop offset="100%" stop-color="#0e4459" />
+    </linearGradient>
+    <linearGradient id="boxGradGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" />
+      <stop offset="100%" stop-color="#065f46" />
+    </linearGradient>
+    <linearGradient id="boxGradPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b0764" />
+      <stop offset="100%" stop-color="#581c87" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="960" height="540" fill="url(#bgGrad)" />
+
+  <!-- Grid overlay -->
+  <g opacity="0.08" stroke="#38bdf8" stroke-width="1">
+    <path d="M 0,60 L 960,60 M 0,120 L 960,120 M 0,180 L 960,180 M 0,240 L 960,240 M 0,300 L 960,300 M 0,360 L 960,360 M 0,420 L 960,420 M 0,480 L 960,480" />
+    <path d="M 120,0 L 120,540 M 240,0 L 240,540 M 360,0 L 360,540 M 480,0 L 480,540 M 600,0 L 600,540 M 720,0 L 720,540 M 840,0 L 840,540" />
+  </g>
+
+  <!-- Title Section -->
+  <text x="480" y="45" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc" text-anchor="middle" letter-spacing="1">
+    SMASFORGE PRO — CCSDS 852.0-M-1 ARCHITECTURE
+  </text>
+  <text x="480" y="70" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#38bdf8" text-anchor="middle" letter-spacing="2">
+    SPACECRAFT ONBOARD INTERFACE SERVICES (SOIS) — SUBNETWORK MEMORY ACCESS SERVICE
+  </text>
+
+  <!-- Layer 1: Flight Software / DAS Consumers -->
+  <rect x="80" y="100" width="800" height="60" rx="8" fill="url(#boxGrad1)" stroke="#334155" stroke-width="2" />
+  <text x="480" y="128" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600" fill="#f1f5f9" text-anchor="middle">
+    Flight Software (FSW) • Device Access Service (DAS) • Memory Management Unit
+  </text>
+  <text x="480" y="146" font-family="monospace" font-size="11" fill="#94a3b8" text-anchor="middle">
+    Direct Memory Access • Bootloader Flashing • Instrument Calibration Registers
+  </text>
+
+  <!-- Primitives Arrows -->
+  <g stroke="#38bdf8" stroke-width="2" fill="none">
+    <path d="M 220,160 L 220,200" />
+    <path d="M 380,160 L 380,200" />
+    <path d="M 580,200 L 580,160" />
+    <path d="M 740,200 L 740,160" />
+  </g>
+  <text x="220" y="185" font-family="monospace" font-size="9" fill="#38bdf8" text-anchor="end" dx="-6">READ.req</text>
+  <text x="380" y="185" font-family="monospace" font-size="9" fill="#4ade80" text-anchor="end" dx="-6">WRITE.req</text>
+  <text x="580" y="185" font-family="monospace" font-size="9" fill="#38bdf8" text-anchor="start" dx="6">READ.ind</text>
+  <text x="740" y="185" font-family="monospace" font-size="9" fill="#f87171" text-anchor="start" dx="6">FAIL.ind</text>
+
+  <!-- Layer 2: SMAS Core Service Layer -->
+  <rect x="80" y="200" width="800" height="110" rx="8" fill="url(#boxGradCyan)" stroke="#0284c7" stroke-width="2" />
+  <text x="100" y="226" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="bold" fill="#38bdf8">
+    SOIS Subnetwork Memory Access Service (SMAS) Layer (CCSDS 852.0-M-1)
+  </text>
+
+  <!-- Service Submodules -->
+  <rect x="100" y="240" width="180" height="55" rx="6" fill="#0f172a" stroke="#0369a1" stroke-width="1.5" />
+  <text x="190" y="262" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="600" fill="#e2e8f0" text-anchor="middle">Address Mapper</text>
+  <text x="190" y="280" font-family="monospace" font-size="10" fill="#38bdf8" text-anchor="middle">Memory Bounds &amp; RO</text>
+
+  <rect x="300" y="240" width="180" height="55" rx="6" fill="#0f172a" stroke="#0369a1" stroke-width="1.5" />
+  <text x="390" y="262" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="600" fill="#e2e8f0" text-anchor="middle">RMAP Transceiver</text>
+  <text x="390" y="280" font-family="monospace" font-size="10" fill="#4ade80" text-anchor="middle">CRC-8 (Poly 0x07)</text>
+
+  <rect x="500" y="240" width="180" height="55" rx="6" fill="#0f172a" stroke="#0369a1" stroke-width="1.5" />
+  <text x="590" y="262" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="600" fill="#e2e8f0" text-anchor="middle">CHECK Validator</text>
+  <text x="590" y="280" font-family="monospace" font-size="10" fill="#facc15" text-anchor="middle">CRC-16-CCITT Engine</text>
+
+  <rect x="700" y="240" width="160" height="55" rx="6" fill="#0f172a" stroke="#0369a1" stroke-width="1.5" />
+  <text x="780" y="262" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="600" fill="#e2e8f0" text-anchor="middle">Atomic RMW</text>
+  <text x="780" y="280" font-family="monospace" font-size="10" fill="#c084fc" text-anchor="middle">Bitmask Mutator</text>
+
+  <!-- Layer 3: SSCL Convergence -->
+  <rect x="80" y="340" width="800" height="70" rx="8" fill="url(#boxGrad1)" stroke="#334155" stroke-width="2" />
+  <text x="480" y="364" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#94a3b8" text-anchor="middle">
+    Subnetwork Specific Convergence Layer (SSCL) &amp; Transceivers
+  </text>
+  <g font-family="monospace" font-size="11" fill="#cbd5e1" text-anchor="middle">
+    <text x="210" y="390">SpaceWire RMAP (0x01)</text>
+    <text x="480" y="390">MIL-STD-1553B DMA Block</text>
+    <text x="750" y="390">CANopen SDO Domain</text>
+  </g>
+
+  <!-- Layer 4: Physical Memory Endpoints -->
+  <g>
+    <!-- Node 1: Payload Mass Memory -->
+    <rect x="80" y="440" width="240" height="65" rx="6" fill="url(#boxGradGreen)" stroke="#10b981" stroke-width="1.5" />
+    <text x="200" y="465" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="600" fill="#ecfdf5" text-anchor="middle">Mass Memory Unit (MMU)</text>
+    <text x="200" y="482" font-family="monospace" font-size="10" fill="#a7f3d0" text-anchor="middle">Addr: 0x20 • 64KB SpaceWire RAM</text>
+
+    <!-- Node 2: ADCS Computer -->
+    <rect x="360" y="440" width="240" height="65" rx="6" fill="url(#boxGradGreen)" stroke="#10b981" stroke-width="1.5" />
+    <text x="480" y="465" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="600" fill="#ecfdf5" text-anchor="middle">ADCS Flight Computer</text>
+    <text x="480" y="482" font-family="monospace" font-size="10" fill="#a7f3d0" text-anchor="middle">Addr: 0x32 • 16KB 1553B DMA</text>
+
+    <!-- Node 3: Power Subsystem -->
+    <rect x="640" y="440" width="240" height="65" rx="6" fill="url(#boxGradGreen)" stroke="#10b981" stroke-width="1.5" />
+    <text x="760" y="465" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="600" fill="#ecfdf5" text-anchor="middle">Power &amp; Thermal Subsystem</text>
+    <text x="760" y="482" font-family="monospace" font-size="10" fill="#a7f3d0" text-anchor="middle">Addr: 0x48 • 4KB CAN SDO Domain</text>
+  </g>
+
+  <!-- Connectors -->
+  <line x1="200" y1="410" x2="200" y2="440" stroke="#10b981" stroke-width="2" stroke-dasharray="3,3" />
+  <line x1="480" y1="410" x2="480" y2="440" stroke="#10b981" stroke-width="2" stroke-dasharray="3,3" />
+  <line x1="760" y1="410" x2="760" y2="440" stroke="#10b981" stroke-width="2" stroke-dasharray="3,3" />
+  <line x1="480" y1="310" x2="480" y2="340" stroke="#38bdf8" stroke-width="2" />
+</svg>
